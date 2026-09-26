@@ -24,5 +24,5 @@
 
 <p align="center">
   <img src="https://erikgaren.com/gh-stats/api/top-langs/?username=JohnHawaiiB-luga&layout=compact&bg_color=0b1017&title_color=4aa8ff&text_color=9db0c6&hide_border=true&langs_count=8&disable_animations=true" height="165" alt="Most used languages"/>
-  <img src="https://streak-stats.demolab.com/?user=JohnHawaiiB-luga&hide_border=true&background=0b1017&stroke=30363d&ring=4aa8ff&fire=e51400&currStreakNum=e6edf3&sideNums=e6edf3&currStreakLabel=4aa8ff&sideLabels=9db0c6&dates=9db0c6&disable_animations=true" height="165" alt="GitHub contribution streak"/>
+  <img src="https://streak-stats.demolab.com/?user=JohnHawaiiB-luga&hide_border=true&background=0b1017&stroke=30363d&ring=4aa8ff&fire=e51400&currStreakNum=e6edf3&sideNums=e6edf3&currStreakLabel=4aa8ff&sideLabels=9db0c6&dates=9db0c6&disable_animations=true&hide_total_contributions=true&card_width=330" height="165" alt="GitHub contribution streak"/>
 </p>

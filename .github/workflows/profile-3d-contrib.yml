@@ -17,6 +17,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
+      - name: Trim the image the README uses
+        run: python3 .github/scripts/trim_3d_contrib.py profile-3d-contrib/profile-night-view.svg
       # The images live on their own single-commit branch so main gets no daily bot commits.
       - name: Publish the images to the output branch
         working-directory: profile-3d-contrib
