@@ -1,0 +1,32 @@
+name: 3D contribution graph
+
+on:
+  schedule:
+    - cron: "0 18 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: yoshi389111/github-profile-3d-contrib@v0.9.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+      # The images live on their own single-commit branch so main gets no daily bot commits.
+      - name: Publish the images to the output branch
+        working-directory: profile-3d-contrib
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          git init -q -b output
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add -A
+          git commit -q -m "Update the 3D contribution graph"
+          git push -f -q "https://x-access-token:${GITHUB_TOKEN}@github.com/${REPO}.git" output
