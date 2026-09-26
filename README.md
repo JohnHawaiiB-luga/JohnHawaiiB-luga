@@ -15,7 +15,9 @@
          _____))_____           Focus.Tooling: ..... validation, runtime diagnostics, test automation
       ~~~~~~        ~~~~~~      Languages: ......... C++17/20, Python, C#, CMake
                                 Tools: ............. Ghidra, RenderDoc, Qt, Git
-                                Links: ............. erikgaren.com · in/erikgaren
+                                Motto: ............. "looks right" is not a test result
+
+                                🟥🟧🟨🟩🟦🟪⬛⬜
 ```
 
 <p align="center">
