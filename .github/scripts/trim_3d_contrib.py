@@ -1,9 +1,8 @@
-"""Trim the 3D contribution graph: drop the star/fork counters and, unless --keep-pie, the language pie.
+"""Trim the 3D contribution graph: drop the language pie and the star/fork counters.
 
-The counters add nothing on a profile page. The website's GitHub tile drops the pie; the README keeps it
-as its languages chart.
+The README shows languages in their own card, and the counters add nothing on a profile page.
 Written against github-profile-3d-contrib v0.9.3; it fails loudly if that layout changes.
-Usage: python3 trim_3d_contrib.py [--keep-pie] FILE.svg [FILE.svg ...]
+Usage: python3 trim_3d_contrib.py FILE.svg [FILE.svg ...]
 """
 import re
 import sys
@@ -19,7 +18,7 @@ def texts(el):
     return [t.text.strip() for t in el.iter(NS + "text") if t.text and t.text.strip()]
 
 
-def trim(path, keep_pie):
+def trim(path):
     tree = ET.parse(path)
     root = tree.getroot()
     groups = [c for c in root if c.tag == NS + "g"]
@@ -27,8 +26,7 @@ def trim(path, keep_pie):
     pies = [g for g in groups if PIE_TRANSFORM.fullmatch(g.get("transform", ""))]
     if len(pies) != 1:
         sys.exit(f"{path}: expected one language pie group, found {len(pies)}")
-    if not keep_pie:
-        root.remove(pies[0])
+    root.remove(pies[0])
 
     totals = [g for g in groups if "contributions" in texts(g)]
     if len(totals) != 1:
@@ -42,14 +40,11 @@ def trim(path, keep_pie):
         totals[0].remove(c)
 
     tree.write(path, encoding="utf-8", xml_declaration=False)
-    print(f"{path}: {'star/fork counters' if keep_pie else 'pie and star/fork counters'} removed")
+    print(f"{path}: pie and star/fork counters removed")
 
 
 if __name__ == "__main__":
-    args = sys.argv[1:]
-    keep_pie = "--keep-pie" in args
-    files = [a for a in args if a != "--keep-pie"]
-    if not files:
+    if len(sys.argv) < 2:
         sys.exit(__doc__)
-    for p in files:
-        trim(p, keep_pie)
+    for p in sys.argv[1:]:
+        trim(p)
