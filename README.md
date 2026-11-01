@@ -5,7 +5,7 @@
         ___.--'  `--.___        erik@workstation:~$ neofetch
       .'  .--. __ .--.  `.      ----------------------------
      /  .'  .-'  `-.  `.  \     OS: ................ HawaiiOS
-       /  .'  (oo)  `.  \       Role: .............. Software and Simulation Engineer
+       /  .'  (oo)  `.  \       Role: .............. Software Engineer, C++ · Python
       '  /    //    \  '        Base: .............. Bavaria, Germany
              //                 Work: .............. FERCHAU GmbH (since Oct 2026)
             //                  Before: ............ 3D pipeline validation, Paradox Cat (2026)
