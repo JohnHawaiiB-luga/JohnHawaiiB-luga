@@ -17,8 +17,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
-      - name: Trim the image the README uses
-        run: python3 .github/scripts/trim_3d_contrib.py profile-3d-contrib/profile-night-view.svg
+      # The website's tile keeps the plain night view; the README shows the rainbow one on the page's own background.
+      - name: Trim the images the website and the README use
+        run: |
+          python3 .github/scripts/trim_3d_contrib.py profile-3d-contrib/profile-night-view.svg
+          cp profile-3d-contrib/profile-night-rainbow.svg profile-3d-contrib/profile-rainbow-light.svg
+          python3 .github/scripts/trim_3d_contrib.py --transparent profile-3d-contrib/profile-night-rainbow.svg
+          python3 .github/scripts/trim_3d_contrib.py --transparent --light profile-3d-contrib/profile-rainbow-light.svg
       # The images live on their own single-commit branch so main gets no daily bot commits.
       - name: Publish the images to the output branch
         working-directory: profile-3d-contrib
