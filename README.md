@@ -6,7 +6,7 @@
       .'  .--. __ .--.  `.      ----------------------------
      /  .'  .-'  `-.  `.  \     OS: ................ HawaiiOS
        /  .'  (oo)  `.  \       Role: .............. Software Engineer, C++ · Python
-      '  /    //    \  '        Base: .............. Bavaria, Germany
+      '  /    //    \  '        Base: .............. Donauwörth, Germany
              //                 Work: .............. FERCHAU GmbH (since Oct 2026)
             //                  Before: ............ 3D pipeline validation, Paradox Cat (2026)
            ((                   Study: ............. BSc (Hons) Computer Science, CCCU · 2026–27
