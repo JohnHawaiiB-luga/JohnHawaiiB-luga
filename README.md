@@ -22,7 +22,10 @@
 ```
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/JohnHawaiiB-luga/JohnHawaiiB-luga/output/profile-night-view.svg" width="100%" alt="3D contribution graph"/>
+  <picture>
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JohnHawaiiB-luga/JohnHawaiiB-luga/output/profile-rainbow-light.svg"/>
+    <img src="https://raw.githubusercontent.com/JohnHawaiiB-luga/JohnHawaiiB-luga/output/profile-night-rainbow.svg" width="100%" alt="3D contribution graph"/>
+  </picture>
 </p>
 
 <p align="center">
